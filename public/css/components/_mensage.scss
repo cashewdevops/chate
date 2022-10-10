@@ -1,0 +1,55 @@
+#card-mensage{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    
+
+   
+}
+
+.box-incone{
+    float: left;
+    background: rgb(224, 224, 224);
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    
+    ion-icon{
+        color: rgb(102, 102, 102);
+        font-size: 1.6em;
+    }
+}
+
+.box-informacao{
+  
+    float: left;
+    .titulo{
+        font-size: 0.9em;
+        margin-top: 6px;
+        font-weight: 600;
+    }
+    .mensagem{
+        width: 230px;
+        font-size: 0.8em;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}
+
+.msg{
+
+    &::after{
+        content: '';
+        padding: 7px;
+        border-radius: 100px;
+        background: red;
+        right: 0;
+        top: 06px;
+        position: absolute;
+    }
+}

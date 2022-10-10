@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+
+    <!-- animated -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Jquery -->
+    <script src="/jquery/dist/jquery.min.js"></script>
+
+    <title>Painel Administrativo</title>
+</head>
+<body>
+    <header>
+        <img src="/img/smarchat.png" width="180px">
+
+        <div id="box-informations">
+            <div id="online">
+                <div class="incone indicator-off" id="status"></div>
+                <div class="descricao">Online</div>
+            </div>
+            <div id="notification" class="fas fa-bell"></div>
+        </div>
+    </header>
+
+    <div id="main-chate">
+
+        <nav>
+            <h4>Filas de atedimento <li class="fas fa-ellipsis-v"></li> </h4>
+    
+            <div id="tipo-atendimento">
+    
+                <span id="andamento" onclick="app.switchOptions()" class="opcoes-tipo-atendimentos selecionado">
+                    <div class="indicador">3</div>
+                    Andamento
+                </span>
+                <span id="entrada" onclick="app.switchOptions('entrada')" class="opcoes-tipo-atendimentos">
+                    <div class="indicador">4</div>
+                    Entrada 
+                </span>
+                <span id="pendente" onclick="app.switchOptions('pendente')" class="opcoes-tipo-atendimentos">
+                    <div class="indicador">2</div>
+                    Pendente
+                </span>
+                
+            </div>
+    
+            <div style="overflow-y: auto;" class="tabs" id="andamento">
+                <div class="card msg" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Pedro Henrique Cruz Lima Silva</div>
+                        <div class="mensagem">Quero saber quanto custa...</div>
+                    </div>
+                </div>
+                <div class="card msg" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Pedro Henrique Cruz Lima Silva</div>
+                        <div class="mensagem">Quero saber quanto custa...</div>
+                    </div>
+                </div>
+                <div class="card msg" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Jefferson Cardoso Martins</div>
+                        <div class="mensagem">Horario do atendimento?</div>
+                    </div>
+                </div>
+                <div class="card" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Iranildo Barros Sousa Filho</div>
+                        <div class="mensagem">Preço aultrasson braço esquerdo superior</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div style="overflow-y: auto;" class="tabs" id="entrada">
+                <div class="card" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Joseline Martins da silva</div>
+                        <div class="mensagem">Quero saber quanto custa...</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div style="overflow-y: auto;" class="tabs" id="pendente">
+                <div class="card msg" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Allan vilarinho ferreira</div>
+                        <div class="mensagem">Quero saber quanto custa...</div>
+                    </div>
+                </div>
+                <div class="card msg" id="card-mensage">
+                    <div class="box-incone">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="box-informacao" >
+                        <div class="titulo">Carlos Eduardo pereira de lime</div>
+                        <div class="mensagem">Quero saber quanto custa...</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </nav>
+
+        <main>
+
+            <div id="corpo-chate">
+
+                <div id="header-title">
+                    
+                </div>
+
+                <div id="chat">
+
+                </div>
+                <div id="bix-input">
+
+                </div>
+                
+            </div>
+            
+            <div id="information">
+
+                <nav>
+                    <h5> <li class="fas fa-ellipsis-v"></li> Sobre o contato <li class="fas fa-trash" ></li> </h4>
+
+                    <div id="tipo-informacao">
+    
+                        <span id="andamento" class="opcoes-tipo-informacaos selecionado">
+                            Informação
+                        </span>
+                        <span id="entrada" class="opcoes-tipo-informacaos">
+                            Historico 
+                        </span>
+                                                
+                    </div>
+
+                </nav>
+
+            </div>
+        
+        </main>
+
+
+
+
+    </div>
+
+   
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+
+   
+
+</body>
+</html>
