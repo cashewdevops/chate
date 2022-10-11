@@ -1,8 +1,9 @@
 nav{
     height: 100%;
     background: #ffffff;
-    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.13);
     padding-top: 20px;
+  
 
     h4:nth-child(1){
         text-align: center;
@@ -26,6 +27,7 @@ nav{
         width: 100%;
         padding: 0;
         display: grid;
+        font-weight: 600;
         grid-auto-flow: column;
         box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
 
@@ -81,9 +83,8 @@ nav{
 }
 
 .tabs{
-    padding: 10px;
     display: none;
-    height: 750px;
+    height: 750px;;
 }
 
 .select{ 

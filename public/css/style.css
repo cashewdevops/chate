@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 * {
   margin: 0;
@@ -43,6 +44,7 @@ header #box-informations {
 }
 
 header #box-informations #online {
+  margin-right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,15 +74,46 @@ header #box-informations #online .indicator-off {
   background: #b30000;
 }
 
-header #box-informations #notification {
+header #box-informations #container-notificacao {
+  position: relative;
   margin: 0 20px;
+}
+
+header #box-informations #container-notificacao #box-indicacao {
+  position: absolute;
+  width: 18px;
+  padding: 1px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+  -webkit-transform: translateX(15px) translateY(-10px);
+          transform: translateX(15px) translateY(-10px);
+  border-radius: 100px;
+  background: red;
+}
+
+header #box-informations #container-notificacao #notification {
+  font-size: 20px;
+}
+
+header #box-informations #usuario {
+  margin: 0 0 0 20px;
+  font-weight: 700;
+}
+
+header #box-informations #options-nome {
+  cursor: pointer;
+  margin: 0 20px 0 10px;
 }
 
 nav {
   height: 100%;
   background: #ffffff;
-  -webkit-box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
-          box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.13);
+          box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.13);
   padding-top: 20px;
 }
 
@@ -108,6 +141,7 @@ nav #tipo-atendimento {
   padding: 0;
   display: -ms-grid;
   display: grid;
+  font-weight: 600;
   grid-auto-flow: column;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
@@ -152,7 +186,6 @@ nav .selecionado::after {
 }
 
 .tabs {
-  padding: 10px;
   display: none;
   height: 750px;
 }
@@ -183,34 +216,57 @@ nav .selecionado::after {
 #corpo-chate {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 7vh 80vh 7vh 100vh;
-      grid-template-rows: 7vh 80vh 7vh 100vh;
+  -ms-grid-rows: 12vh 76vh 7vh 100vh;
+      grid-template-rows: 12vh 76vh 7vh 100vh;
 }
 
 #corpo-chate #header-title {
-  background: #1cec00;
+  background: white;
   overflow: hidden;
   width: 100%;
-  -webkit-box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
-          box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.13);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+}
+
+#corpo-chate #header-title #informacao-conversa {
+  margin-left: 20px;
+  margin-top: 26px;
+}
+
+#corpo-chate #header-title #informacao-conversa .titulo {
+  float: left;
+  margin-top: 4px;
+}
+
+#corpo-chate #header-title #informação-exame {
+  -webkit-box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.829);
+          box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.829);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  width: 100%;
 }
 
 #corpo-chate #chat {
-  background: #000;
+  background: #e2e2e2;
   width: 100%;
 }
 
 #corpo-chate #bix-input {
-  background: yellow;
+  background: #22678f;
 }
 
 nav {
@@ -304,20 +360,13 @@ nav .select {
   position: relative;
   cursor: pointer;
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 .box-incone {
   float: left;
-  background: #e0e0e0;
   text-align: center;
-  border-radius: 10px;
-  padding: 10px;
   margin-right: 10px;
-}
-
-.box-incone ion-icon {
-  color: #666666;
-  font-size: 1.6em;
 }
 
 .box-informacao {
@@ -326,7 +375,7 @@ nav .select {
 
 .box-informacao .titulo {
   font-size: 0.9em;
-  margin-top: 6px;
+  margin-top: 3px;
   font-weight: 600;
 }
 
@@ -338,12 +387,16 @@ nav .select {
   text-overflow: ellipsis;
 }
 
+.sele {
+  background: #b9b9b9;
+}
+
 .msg::after {
   content: '';
   padding: 7px;
   border-radius: 100px;
   background: red;
-  right: 0;
+  right: 27px;
   top: 06px;
   position: absolute;
 }

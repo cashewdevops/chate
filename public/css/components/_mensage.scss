@@ -3,33 +3,24 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    margin-bottom: 20px;
-
-    
-
-   
+    margin-bottom: 20px; 
+    padding: 10px;
 }
 
 .box-incone{
     float: left;
-    background: rgb(224, 224, 224);
     text-align: center;
-    border-radius: 10px;
-    padding: 10px;
     margin-right: 10px;
-    
-    ion-icon{
-        color: rgb(102, 102, 102);
-        font-size: 1.6em;
-    }
+
 }
 
 .box-informacao{
   
     float: left;
+
     .titulo{
         font-size: 0.9em;
-        margin-top: 6px;
+        margin-top: 3px;
         font-weight: 600;
     }
     .mensagem{
@@ -41,6 +32,10 @@
     }
 }
 
+.sele{
+    background: rgb(185, 185, 185);
+}
+
 .msg{
 
     &::after{
@@ -48,7 +43,7 @@
         padding: 7px;
         border-radius: 100px;
         background: red;
-        right: 0;
+        right: 27px;
         top: 06px;
         position: absolute;
     }
