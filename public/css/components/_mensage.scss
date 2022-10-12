@@ -3,8 +3,8 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    margin-bottom: 20px; 
-    padding: 10px;
+    margin-bottom: 3px; 
+    padding: 12px;
 }
 
 .box-incone{
@@ -20,8 +20,8 @@
 
     .titulo{
         font-size: 0.9em;
-        margin-top: 3px;
-        font-weight: 600;
+        margin-top: 0px;
+        font-weight: 500;
     }
     .mensagem{
         width: 230px;
@@ -33,7 +33,7 @@
 }
 
 .sele{
-    background: rgb(185, 185, 185);
+    background: rgb(226, 226, 226);
 }
 
 .msg{
@@ -43,8 +43,8 @@
         padding: 7px;
         border-radius: 100px;
         background: red;
-        right: 27px;
-        top: 06px;
+        right: 33px;
+        top: 12px;
         position: absolute;
     }
 }

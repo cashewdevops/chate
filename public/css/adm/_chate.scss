@@ -1,7 +1,7 @@
 #corpo-chate{
-    
+    padding-top: 20px;
     display: grid;
-    grid-template-rows: 12vh 76vh 7vh 100vh;
+    grid-template-rows: 12vh 73vh 7vh 100vh;
 
 
     #header-title{
@@ -16,10 +16,10 @@
 
         #informacao-conversa{
             margin-left: 20px;
-            margin-top: 26px;     
+            margin-top: 22px;     
             .titulo{
                 float: left;
-                margin-top: 4px;
+                margin-top: 2px;
                
             }
         }

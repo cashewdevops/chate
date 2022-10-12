@@ -64,6 +64,7 @@ module.exports.logar = async function(aplication, req, res){
             const token = jwt.sign({ id: usuario[0].id }, secret)
 
             res.status(200).json({msg: "Autenticação realizada com sucesso", token})
+            
 
         }else{
 

@@ -17,7 +17,7 @@ header {
   top: 0px;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: #fff;
   -webkit-box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
           box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
@@ -85,12 +85,12 @@ header #box-informations #container-notificacao #box-indicacao {
   padding: 1px 0;
   text-align: center;
   color: #fff;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: bold;
   right: 0;
   top: 0;
-  -webkit-transform: translateX(15px) translateY(-10px);
-          transform: translateX(15px) translateY(-10px);
+  -webkit-transform: translateX(15px) translateY(-8px);
+          transform: translateX(15px) translateY(-8px);
   border-radius: 100px;
   background: red;
 }
@@ -101,12 +101,12 @@ header #box-informations #container-notificacao #notification {
 
 header #box-informations #usuario {
   margin: 0 0 0 20px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 header #box-informations #options-nome {
   cursor: pointer;
-  margin: 0 20px 0 10px;
+  margin: 6px 20px 0 10px;
 }
 
 nav {
@@ -114,22 +114,23 @@ nav {
   background: #ffffff;
   -webkit-box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.13);
           box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.13);
-  padding-top: 20px;
+  padding-top: 28px;
 }
 
-nav h4:nth-child(1) {
+nav h6:nth-child(1) {
+  font-weight: normal;
   text-align: center;
   padding: 15px;
   position: relative;
 }
 
-nav h4:nth-child(1) li:nth-child(1) {
+nav h6:nth-child(1) li:nth-child(1) {
   position: absolute;
   right: 20px;
   cursor: pointer;
 }
 
-nav h4:nth-child(1) li:nth-child(2) {
+nav h6:nth-child(1) li:nth-child(2) {
   position: absolute;
   left: 20px;
   cursor: pointer;
@@ -141,7 +142,6 @@ nav #tipo-atendimento {
   padding: 0;
   display: -ms-grid;
   display: grid;
-  font-weight: 600;
   grid-auto-flow: column;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
@@ -214,10 +214,11 @@ nav .selecionado::after {
 }
 
 #corpo-chate {
+  padding-top: 20px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 12vh 76vh 7vh 100vh;
-      grid-template-rows: 12vh 76vh 7vh 100vh;
+  -ms-grid-rows: 12vh 73vh 7vh 100vh;
+      grid-template-rows: 12vh 73vh 7vh 100vh;
 }
 
 #corpo-chate #header-title {
@@ -240,12 +241,12 @@ nav .selecionado::after {
 
 #corpo-chate #header-title #informacao-conversa {
   margin-left: 20px;
-  margin-top: 26px;
+  margin-top: 22px;
 }
 
 #corpo-chate #header-title #informacao-conversa .titulo {
   float: left;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 #corpo-chate #header-title #informação-exame {
@@ -269,7 +270,12 @@ nav .selecionado::after {
   background: #22678f;
 }
 
-nav {
+#information {
+  width: 350px;
+  padding-top: 10px;
+}
+
+#information nav {
   height: 100%;
   background: #ffffff;
   -webkit-box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.13);
@@ -277,25 +283,25 @@ nav {
   padding-top: 20px;
 }
 
-nav h5:nth-child(1) {
+#information nav h5:nth-child(1) {
   text-align: center;
   padding: 15px;
   position: relative;
 }
 
-nav h5:nth-child(1) li:nth-child(1) {
+#information nav h5:nth-child(1) li:nth-child(1) {
   position: absolute;
   right: 20px;
   cursor: pointer;
 }
 
-nav h5:nth-child(1) li:nth-child(2) {
+#information nav h5:nth-child(1) li:nth-child(2) {
   position: absolute;
   left: 20px;
   cursor: pointer;
 }
 
-nav #tipo-informacao {
+#information nav #tipo-informacao {
   margin-top: 7px;
   width: 100%;
   padding: 0;
@@ -306,7 +312,7 @@ nav #tipo-informacao {
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
 }
 
-nav #tipo-informacao .indicador {
+#information nav #tipo-informacao .indicador {
   position: absolute;
   width: 30px;
   padding: 3px 0;
@@ -322,7 +328,7 @@ nav #tipo-informacao .indicador {
           transform: translateX(-10px) translateY(-20px);
 }
 
-nav #tipo-informacao .opcoes-tipo-informacaos {
+#information nav #tipo-informacao .opcoes-tipo-informacaos {
   padding-top: 12px;
   padding-left: 5px;
   padding-right: 5px;
@@ -334,7 +340,7 @@ nav #tipo-informacao .opcoes-tipo-informacaos {
   cursor: pointer;
 }
 
-nav .selecionado::after {
+#information nav .selecionado::after {
   content: '';
   background: #005d81;
   position: absolute;
@@ -344,13 +350,13 @@ nav .selecionado::after {
   height: 2px;
 }
 
-nav .tabs {
+#information nav .tabs {
   padding: 10px;
   overflow: hidden;
   display: none;
 }
 
-nav .select {
+#information nav .select {
   display: block;
 }
 
@@ -359,8 +365,8 @@ nav .select {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 3px;
+  padding: 12px;
 }
 
 .box-incone {
@@ -375,8 +381,8 @@ nav .select {
 
 .box-informacao .titulo {
   font-size: 0.9em;
-  margin-top: 3px;
-  font-weight: 600;
+  margin-top: 0px;
+  font-weight: 500;
 }
 
 .box-informacao .mensagem {
@@ -388,7 +394,7 @@ nav .select {
 }
 
 .sele {
-  background: #b9b9b9;
+  background: #e2e2e2;
 }
 
 .msg::after {
@@ -396,8 +402,8 @@ nav .select {
   padding: 7px;
   border-radius: 100px;
   background: red;
-  right: 27px;
-  top: 06px;
+  right: 33px;
+  top: 12px;
   position: absolute;
 }
 /*# sourceMappingURL=style.css.map */
