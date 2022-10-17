@@ -1,5 +1,3 @@
-const { application } = require('express')
-
 require('module-alias/register')
 
 module.exports = (application) => {

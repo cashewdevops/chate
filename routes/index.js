@@ -4,7 +4,7 @@ let token = require("@token")
 
 module.exports = (aplication) => {
 
-  aplication.get('/', (req, res) => {
+  aplication.get('/login', (req, res) => {
 
     aplication.controller.login.index(aplication, req, res)
 

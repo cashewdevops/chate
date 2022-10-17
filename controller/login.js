@@ -77,7 +77,6 @@ module.exports.logar = async function(aplication, req, res){
 
     }else{
 
-
         res.status(404).json({
             "mensagem" : "Usuario ou senha está errado",
         })
