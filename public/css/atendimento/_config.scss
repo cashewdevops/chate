@@ -11,3 +11,7 @@ html, body{
     justify-content: center;
     align-items: center;
 }
+
+.swal2-container.swal2-center.swal2-fade.swal2-shown {
+    pointer-events: initial !important;
+  } 

@@ -6,7 +6,7 @@ let app = {
     
     socket(){
         
-        var socket = io("/adm");
+        var socket = io();
 
         socket.on("status", (status) =>{
 
@@ -23,6 +23,7 @@ let app = {
                 .addClass("indicator-off")
             }
         })
+
 
     },
 

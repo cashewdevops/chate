@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/animate.css/animate.css">
+    <link rel="stylesheet" href="/jquery/dist/jquery.min.js">
+    <link rel="stylesheet" href="/sweetalert2/dist/sweetalert2.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
@@ -20,30 +23,25 @@
     
     <a href="#" id="voltar"><li class="fas fa-angle-left"></li></a>
 
-    <div id="form-entrar-fila" class="card entrar">
+    <div id="form-entrar-fila" class="card loading-inicial">
         <div class="card-header">
-            <img src="/img/udi.png" width="45px">
-            <span>Atendimento</span>
+            <div id="titulo-chate">
+                <img src="/img/udi.png" width="45px">
+                <span>Atendimento</span>
+            </div>
         </div>
         <div class="card-body">
-            <div class="titulo">Antes de falar com um dos nossos colaboradores, peço que preencha os seguintes capos.</div>
-            <div class="campos" id="campos-nome">
-                <label>Nome</label><br>
-                <input type="text" id="nome">
+            <div id="loading">
+                <div class="lds-dual-ring"></div>
+                <span id="legendas-container">Verificando...</span>
             </div>
-            <div class="campos" id="campos-whatsapp">
-                <label>Whatsapp</label><br>
-                <input type="text" id="nome">
-            </div>
-            <div class="campos" id="campos-email">
-                <label>Email</label><br>
-                <input type="text" id="nome">
-            </div>
-            <button>Entrar</button>
         </div>
 
     </div>
     
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="/js/cliente.js"></script>
     
 </body>
 </html>

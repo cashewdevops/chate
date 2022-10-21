@@ -4,7 +4,7 @@ let token = require("@token")
 
 module.exports = (aplication) => {
 
-  aplication.get('/login', (req, res) => {
+  aplication.get('/', (req, res) => {
 
     aplication.controller.login.index(aplication, req, res)
 
@@ -21,6 +21,12 @@ module.exports = (aplication) => {
   aplication.post('/cadastrar', (req, res) => {
 
     aplication.controller.login.cadastro(aplication, req, res)
+
+  })
+  
+  aplication.get('/sair', (req, res) => {
+
+    aplication.controller.login.sair(aplication, req, res)
 
   })
 

@@ -1,4 +1,4 @@
-.entrar{
+.entrar-fila{
     animation-name: entrarFila;
     animation-duration: 1s;
     animation-duration: 1s;
@@ -14,5 +14,83 @@
     100%{
         height:41px;
         
+    }
+}
+
+
+.status{
+    animation-name: animationStatus;
+    animation-duration: 1s;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animationStatus {
+    
+    0%{
+        height:41px; 
+        
+    }
+
+    100%{
+        height: 140px;
+    }
+}
+
+.ocultar-loading{
+    animation-name: ocultar-loading;
+    animation-duration: 1s;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ocultar-loading {
+    0%{
+        height: 170px;
+        
+    }
+    100%{
+        height:41px; 
+    }
+}
+
+
+.expandir-formulario{
+    animation-name: formulario;
+    animation-duration: 1s;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes formulario {
+    0%{
+        height:41px;
+        
+    }
+    100%{
+        height: 500px;
+    }
+}
+
+
+.chate{
+    animation-name: chate;
+    animation-duration: 1s;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes chate {
+    0%{
+        height:41px;
+        
+    }
+    100%{
+        min-width: 50%;
+        height: 70%;
     }
 }

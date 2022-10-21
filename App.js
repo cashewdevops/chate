@@ -5,7 +5,8 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let consign = require('consign');
 let app = express();
-
+let http = require('http');
+let { Server } = require("socket.io")
 
 
 // view engine setup
@@ -43,4 +44,9 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+const serverHttp = http.createServer(app);
+
+const  io = new Server(serverHttp)
+
+
+module.exports = { serverHttp, io };

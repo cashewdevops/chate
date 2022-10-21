@@ -8,7 +8,7 @@ require('dotenv').config()
 
 
 module.exports.index = function (aplication, req, res) {
-
+    
     res.render('home');
     
 }
@@ -26,7 +26,8 @@ module.exports.cadastro = async function(aplication, req, res){
            nome: nome,
            cpf: cpf,
            password: hash2,
-           supervisor: 1
+           supervisor: 1,
+           ativo: 1,
        })
  
 
@@ -56,21 +57,20 @@ module.exports.logar = async function(aplication, req, res){
 
         const result2 = await bcrypt.compare(password, usuario[0].password);
         
-
         if(result2){
 
             const secret = process.env.SECRET
 
             const token = jwt.sign({ id: usuario[0].id }, secret)
+                
+            res.cookie("token", token).redirect("/adm")
 
-            res.status(200).json({msg: "Autenticação realizada com sucesso", token})
+            // res.status(200).json({msg: "Autenticação realizada com sucesso", token})
             
 
         }else{
 
-            res.status(404).json({
-                "mensagem" : "Usuario ou senha está errado",
-            })
+            res.redirect("/")
 
         }
        
@@ -83,8 +83,13 @@ module.exports.logar = async function(aplication, req, res){
 
     }
     
+
+
+}
+
+module.exports.sair = function(aplication, req, res){
     
-
-
-
+    res.clearCookie("token");
+    res.clearCookie("mp_52e5e0805583e8a410f1ed50d8e0c049_mixpanel")
+    res.redirect("/")
 }

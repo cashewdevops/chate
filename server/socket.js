@@ -1,22 +1,17 @@
-const io = require("socket.io")();
+require('module-alias/register')
 
-const socket = {
-    io: io
-};
+const io = require('@app').io
 
-  socket.io.of("/adm").on('connection', (socket) => {
-    
+io.on('connection', (socket) => {
+  
     socket.emit("status", "online")
 
-    console.log(socket.id)
+});
 
-  });
-
-  socket.io.of("/adm").on('disconect', (socket) => {
-    
-    socket.emit("status", "off")
-
-  });
+io.on('disconect', (socket) => {
   
+  socket.emit("status", "off")
 
-module.exports = socket;
+});
+
+
