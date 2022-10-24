@@ -25,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 consign()
   .include('routes')
-  .then('controller')
+  .include('controller')
+  .then('config/db.js')
   .into(app)
 
 // catch 404 and forward to error handler

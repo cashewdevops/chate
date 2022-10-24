@@ -6,6 +6,15 @@ io.on('connection', (socket) => {
   
     socket.emit("status", "online")
 
+    socket.on("tipo", arg =>{
+
+      if(arg == "entrada"){
+        io.emit("entranda", true)
+      }
+      
+
+    })
+
 });
 
 io.on('disconect', (socket) => {

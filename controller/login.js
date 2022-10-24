@@ -2,14 +2,14 @@ require('module-alias/register')
 
 var bcrypt = require('bcrypt')
 var jwt = require("jsonwebtoken")
-let user = require('@user')
+
 
 require('dotenv').config()
 
 
 module.exports.index = function (aplication, req, res) {
     
-    res.render('home');
+    res.render('home');    
     
 }
 
@@ -49,40 +49,36 @@ module.exports.cadastro = async function(aplication, req, res){
 
 module.exports.logar = async function(aplication, req, res){
 
+    const connection = aplication.config.db()
+
     let {cpf, password} = req.body
 
-    const usuario = await user.findAll({ where:{ cpf: cpf}})
-    
-    if(usuario.length != 0) {
+    let query = `SELECT * FROM funcionarios as f WHERE f.cpf = ${cpf}`
 
-        const result2 = await bcrypt.compare(password, usuario[0].password);
+    connection.query(query, async (error, results, fields)=>{
+        if(!error){
+                if(results.length != 0){
+                    let usuario = results[0]
+                    const result2 = await bcrypt.compare(password, usuario.password);
+                    if(result2){
+                        const secret = process.env.SECRET
+                        const token = jwt.sign({ id: usuario.id }, secret)
+                        res.cookie("token", token).redirect("/adm")
+                    }else{
+                        res.redirect("/")
+                    }
+            }else{
         
-        if(result2){
-
-            const secret = process.env.SECRET
-
-            const token = jwt.sign({ id: usuario[0].id }, secret)
-                
-            res.cookie("token", token).redirect("/adm")
-
-            // res.status(200).json({msg: "Autenticação realizada com sucesso", token})
-            
+                res.status(404).json({
+                    "mensagem" : "Usuario ou senha está errado",
+                })
+            }
 
         }else{
-
-            res.redirect("/")
-
+            console.log(error)
         }
-       
 
-    }else{
-
-        res.status(404).json({
-            "mensagem" : "Usuario ou senha está errado",
-        })
-
-    }
-    
+    })
 
 
 }
@@ -90,6 +86,5 @@ module.exports.logar = async function(aplication, req, res){
 module.exports.sair = function(aplication, req, res){
     
     res.clearCookie("token");
-    res.clearCookie("mp_52e5e0805583e8a410f1ed50d8e0c049_mixpanel")
     res.redirect("/")
 }

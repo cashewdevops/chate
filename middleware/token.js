@@ -6,8 +6,7 @@ module.exports = async function checkeToken(req, res, next) {
 
     const secret = process.env.SECRET
 
-    const verifiayToken = req.headers.cookie
-    const token = verifiayToken.split("=")[1].split(";")[0]
+    const token = req.cookies.token
 
     if (!token) {
       res.redirect("/")
