@@ -1,11 +1,9 @@
 
 require('module-alias/register')
 
-// let paciente = require("@paciente")
-// let conversa = require("@conversa")
 
-module.exports.formulario = (application, req, res) => {
-    res.render('formulario')
+module.exports.login = (application, req, res) => {
+    res.render('login')
 }
 
 module.exports.entrar = async (application, req, res) => {
