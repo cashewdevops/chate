@@ -1,33 +1,15 @@
-require('module-alias/register')
+module.exports = (aplication) =>{
 
-let token = require("@token")
+    aplication.get('/login', (req, res) =>{
+        aplication.controller.index.login(aplication, req, res)
+    })
 
-module.exports = (aplication) => {
+    aplication.post('/entrar', (req, res) =>{
+        aplication.controller.index.entrar(aplication, req, res)
+    })
 
-  aplication.get('/', (req, res) => {
-
-    aplication.controller.login.index(aplication, req, res)
-
-  })
-
-
-  aplication.post('/logar', (req, res) => {
-
-    aplication.controller.login.logar(aplication, req, res)
-  
-  })
-
-
-  aplication.post('/cadastrar', (req, res) => {
-
-    aplication.controller.login.cadastro(aplication, req, res)
-
-  })
-  
-  aplication.get('/sair', (req, res) => {
-
-    aplication.controller.login.sair(aplication, req, res)
-
-  })
-
+    aplication.get('/painel', (req, res) => {
+        aplication.controller.index.painel(aplication, req, res)
+    })
+    
 }

@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/fontawesome/css/all.css">
-    <link rel="stylesheet" href="/animate.css/animate.css">
-    <link rel="stylesheet" href="/jquery/dist/jquery.min.js">
-    <link rel="stylesheet" href="/sweetalert2/dist/sweetalert2.css">
+<%- include('./layouts/header') -%>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+<a href="#" id="voltar"><li class="fas fa-angle-left"></li></a>
 
-    <!-- Jquery -->
-    <script src="/jquery/dist/jquery.min.js"></script>
+<main>
+    <div id="login">
+        <div id="img-background">
+            <img src="/img/udi.png" width="150px">
+            <h3>Seja bem vindo(a)</h3>
+            <h7>Área do cliente, ficamos felizes em ter você aqui. Caso seja um cliente novo, peço que faça um cadastro</h7>
+            <button>Cadastra-se</button>
+        </div>
+    </div>
 
-    <link rel="stylesheet" href="/css/paciente/style.css">
+    <div id="cadastro">
 
-    <title>Paciente</title>
-</head>
-<body>
-    
-    <a href="#" id="voltar"><li class="fas fa-angle-left"></li></a>
-
-    <main>
         
-    </main>
+    </div>
 
-    <!-- <script src="/socket.io/socket.io.js"></script>
-    <script src="/sweetalert2/dist/sweetalert2.js"></script>
-    <script src="/js/cliente.js"></script> -->
-    
-</body>
-</html>
+</main>
+<script src="/js/loginCliente.js"></script>
+
+<%- include('./layouts/footer') -%>
